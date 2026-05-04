@@ -1059,3 +1059,10 @@ textarea {
         padding-bottom: 80px;
     }
 }
+
+/* FIX */
+/* Hero */
+#hero {
+    opacity: 1 !important;
+    transform: none !important;
+}
