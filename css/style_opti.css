@@ -1,0 +1,1061 @@
+/* ================= VARIABLES ================= */
+:root {
+    --primary: #0ea5e9;
+    --primary-dark: #0284c7;
+    --text: #1e293b;
+    --background: #ffffff;
+    --gray: #f1f5f9;
+}
+
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: var(--background);
+    line-height: 1.6;
+}
+
+/* ================= GLOBAL ================= */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* ================= BUTTON ================= */
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+}
+
+/* ================= HEADER ================= */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text);
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: var(--primary);
+}
+
+/* Burger caché sur desktop */
+.burger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ================= LOGO ================= */
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+/* ================= HERO ================= */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 70px;
+    color: white;
+
+    background-image: linear-gradient(
+        rgba(15, 23, 42, 0.55),
+        rgba(15, 23, 42, 0.55)
+    ), url("../asset/img/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 80vh;
+        height: auto;
+        padding: 120px 0 80px;
+        background-position: center;
+    }
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    margin: 20px 0;
+    font-size: 1.1rem;
+}
+
+/* ================= SERVICES ================= */
+.services {
+    background: var(--gray);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ================= PROCESS ================= */
+.process {
+    padding: 60px 0; /* 👈 moins d’espace */
+}
+
+.process-steps {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.process-steps::before,
+.process-steps::after {
+    display: none;
+}
+
+.step {
+    width: 260px;
+}
+
+/* Cartes */
+.step {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid #e2e8f0;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Numéro stylé */
+.step h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+/* ================= ADVANTAGES ================= */
+.advantages {
+    padding: 60px 0;
+    background: #f8fafc;
+}
+
+/* Grid au lieu liste */
+.advantages-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Items */
+.advantages-list li {
+    background: white;
+    padding: 15px 18px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #e2e8f0;
+    transition: 0.3s;
+}
+
+.advantages-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* ================= REVIEWS ================= */
+.reviews {
+    background: var(--gray);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.review {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-style: italic;
+}
+
+/* ================= ABOUT ================= */
+.about {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* ================= CONTACT ================= */
+.contact form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+#form-message {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* ================= FOOTER ================= */
+/* ================= FOOTER ================= */
+
+.footer {
+    background: #0f172a;
+    color: #cbd5f5;
+    padding: 60px 0 20px;
+}
+
+/* Grid principale */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+/* Colonnes */
+.footer-col h3 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.footer-col h4 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Texte */
+.footer-col p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+/* Navigation */
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    text-decoration: none;
+    color: #cbd5f5;
+    transition: 0.3s;
+}
+
+.footer-col a:hover {
+    color: var(--primary);
+}
+
+/* Réseaux sociaux */
+.socials {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.socials a {
+    width: 40px;
+    height: 40px;
+    background: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Hover par réseau */
+
+/* Base */
+.socials {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.socials a {
+    width: 45px;
+    height: 45px;
+    background: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet glow (halo) */
+.socials a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(12px);
+    opacity: 0;
+    transition: 0.3s;
+    z-index: -1;
+}
+
+/* Hover général */
+.socials a:hover {
+    transform: scale(1.15) translateY(-5px) rotate(5deg);
+}
+
+/* Activation glow */
+.socials a:hover::before {
+    opacity: 0.7;
+}
+
+/* Couleurs réseaux + glow */
+.socials a:nth-child(1):hover {
+    background: #1877f2; /* Facebook */
+    color: #ffff;
+    box-shadow: 0 0 15px #1877f2;
+}
+
+.socials a:nth-child(2):hover {
+    background: #000000; /* TikTok */
+    color: #fff;
+    box-shadow: 0 0 15px #000000;
+}
+
+.socials a:nth-child(3):hover {
+    background: #e4405f; /* Instagram */
+    color: #fff000;
+    box-shadow: 0 0 15px #e4405f;
+
+}
+
+.socials a:nth-child(4):hover {
+    background: #fffc00; /* Snap */
+    color: #000;
+    box-shadow: 0 0 15px #fffc00;
+}
+
+.socials a:nth-child(5):hover {
+    background: #25d366; /* WhatsApp */
+    color: #224b1b;
+    box-shadow: 0 0 15px #25d366;
+}
+
+/* Garde l'effet mouvement */
+.socials a:hover {
+    transform: translateY(-3px);
+}
+
+/* Bas du footer */
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #1e293b;
+    font-size: 0.9rem;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablette */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .socials {
+        justify-content: center;
+    }
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
+@media (max-width: 992px) {
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-steps {
+        flex-direction: column;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .hero {
+        height: auto;
+        padding: 100px 0;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* NAV MOBILE */
+    .nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: white;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    /* Logo mobile */
+        .logo img {
+            height: 30px;
+        }
+
+    /* cacher bouton devis sur mobile */
+    .header .btn {
+        display: none;
+    }
+}
+
+/* Logo mobile */
+
+    .logo img {
+        height: 50px;
+    }
+
+    @media (max-width: 768px) {
+
+    .header .container {
+        position: relative;
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Logo Footter */
+.footer-logo img {
+    height: 40px;
+    width: auto;
+    margin-bottom: 15px;
+}
+
+/* Optionnel : centré sur mobile */
+@media (max-width: 768px) {
+    .footer-logo img {
+        margin: 0 auto 15px;
+        display: block;
+    }
+}
+
+/* Style Bouton Envoye */
+/* Loader caché par défaut */
+
+
+/* Etats du bouton */
+.btn.success {
+    background: #22c55e; /* vert */
+}
+
+.btn.error {
+    background: #ef4444; /* rouge */
+}
+
+/* Animation smooth */
+.btn {
+    transition: all 0.3s ease;
+}
+
+/* Texte animé */
+.btn span {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Header shrink */
+.header.shrink {
+    height: 60px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+}
+
+.header.shrink .container {
+    height: 60px;
+}
+
+/* Effet Animation Pro */
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Card Premium */
+.service-card,
+.review {
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.service-card:hover,
+.review:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Scroll bar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+/* Interaction Formulaire */
+input:focus,
+textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(14,165,233,0.2);
+}
+
+/* ================= FORMULAIRE PREMIUM ================= */
+
+.contact form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* Champs */
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+input,
+textarea {
+    width: 100%;
+    padding: 14px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+}
+
+/* Focus */
+input:focus,
+textarea:focus {
+    background: white;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(14,165,233,0.15);
+}
+
+/* Labels */
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* Bouton */
+.contact .btn {
+    width: 100%;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+/* Message feedback */
+#form-message {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Formulaire Label design */
+.form-group {
+    position: relative;
+}
+
+/* Input avec espace pour label */
+.form-group input,
+.form-group textarea {
+    padding: 18px 12px 12px;
+}
+
+/* Label position de base */
+.form-group label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: all 0.25s ease;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Quand actif */
+.form-group input:focus + label,
+.form-group input:valid + label,
+input:not(:placeholder-shown) ~ label,
+.form-group textarea:focus + label,
+.form-group textarea:valid + label {
+    top: -8px; /* 👈 monte au-dessus */
+    transform: none;
+    font-size: 0.75rem;
+    color: var(--primary);
+    background: var(--background);
+    padding: 0 6px;
+    border-radius: 4px;
+}
+
+/* Zone Message Style */
+textarea {
+    min-height: 180px; /* 👈 hauteur par défaut */
+    resize: none; /* 👈 empêche le redimensionnement */
+}
+
+/* FIX Label Message Position */
+/* Spécifique au textarea */
+.form-group textarea + label {
+    top: 10px; /* 👈 position fixe en haut */
+    transform: none;
+}
+
+
+/* Fix Loader BTN Envoyer */
+.btn.loading {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Fix Label Error design */
+.form-group input:invalid:not(:placeholder-shown) {
+  border: 1px solid #ff0000;
+  animation: blink-border .7s step-end 4;
+  box-shadow: none;
+}
+
+@keyframes blink-border {
+  0%, 100% { border-color: #e05252; }
+  50%       { border-color: transparent; }
+}
+
+.form-group input:valid:not(:placeholder-shown) {
+  border: 1px solid #3aad6e;
+  box-shadow: none;
+}
+
+#services, #about, #contact {
+  scroll-margin-top: 85px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+    color: white;
+
+    background-image: linear-gradient(
+        rgba(15, 23, 42, 0.45),
+        rgba(15, 23, 42, 0.45)
+    ), url("../asset/img/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: auto;
+    padding: 45px 35px;
+    text-align: center;
+
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+.hero h1 {
+    font-size: 3.4rem;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.45);
+}
+
+.hero p {
+    max-width: 620px;
+    margin: 0 auto 30px;
+    font-size: 1.15rem;
+    color: #e0f2fe;
+}
+
+.hero .btn {
+    font-size: 1rem;
+    padding: 14px 26px;
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        margin: 0 20px;
+        padding: 30px 22px;
+        border-radius: 18px;
+    }
+
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Icône cercle */
+.step-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    background: rgba(14,165,233,0.1);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+/* Hover */
+.step:hover .step-icon {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.1);
+}
+
+.advantages-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Icônes */
+.advantages-list i {
+    color: var(--primary);
+    font-size: 16px;
+    min-width: 20px;
+}
+
+/* Hover */
+.advantages-list li:hover i {
+    transform: scale(1.2);
+}
+
+/* Ligne de progression entre les étapes */
+.process-steps {
+    position: relative;
+}
+
+/* Ligne principale */
+.process-steps::before {
+    content: "";
+    position: absolute;
+    top: 55px;
+    left: 16%;
+    right: 16%;
+    height: 3px;
+    background: #e2e8f0;
+    z-index: 0;
+}
+
+/* Ligne bleue */
+.process-steps::after {
+    content: "";
+    position: absolute;
+    top: 55px;
+    left: 16%;
+    width: 68%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), #38bdf8);
+    z-index: 0;
+}
+
+/* Les cartes passent au-dessus de la ligne */
+.step {
+    position: relative;
+    z-index: 1;
+}
+
+/* Les icônes masquent proprement la ligne derrière */
+.step-icon {
+    position: relative;
+    z-index: 2;
+    background: white;
+    box-shadow: 0 0 0 8px #f8fafc;
+}
+
+@media (max-width: 768px) {
+    .process-steps::before,
+    .process-steps::after {
+        display: none;
+    }
+}
+
+/* Optimisation mobile */
+/* Retrais des section about, avis, nav dans le footer, retrais du cta dans le hero et menu hamburgeur */
+@media (max-width: 992px) {
+
+    /* Section About */
+    .about {
+        display: none;
+    }
+
+    /* Section Avis */
+    .reviews {
+        display: none;
+    }
+
+    /* Footer Navigation (2ème colonne) */
+    .footer-col:nth-child(2) {
+        display: none;
+    }
+    
+    /* Masquer le menu hamburger */
+    .burger {
+        display: none;
+    }
+
+    /* Masquer le bouton CTA du hero */
+    .hero .btn {
+        display: none;
+    }
+
+}
+
+/* Masque Les bouton tel et devis du mobile */
+/* CTA mobile caché sur desktop */
+.mobile-cta {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .mobile-cta {
+        position: fixed;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        z-index: 2000;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .mobile-cta a {
+        text-decoration: none;
+        text-align: center;
+        padding: 14px 10px;
+        border-radius: 14px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    }
+
+    .mobile-cta-phone {
+        background: #0f172a;
+        color: white;
+    }
+
+    .mobile-cta-contact {
+        background: var(--primary);
+        color: white;
+    }
+
+    .mobile-cta i {
+        margin-right: 6px;
+    }
+
+    body {
+        padding-bottom: 80px;
+    }
+}
